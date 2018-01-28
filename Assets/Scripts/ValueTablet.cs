@@ -9,7 +9,7 @@ public class ValueTablet : MonoBehaviour {
     static public int InformationDistributer_Cost = 200;
     static public int TransmissionLine_Cost = 150;
     // GameManager
-    static public int gm_funds_value = 1000;
+    static public int gm_funds_value = 400;
     static public int gm_staff_num = 0;
     static public int gm_total_message_num = 0;
     // Planet
@@ -18,7 +18,7 @@ public class ValueTablet : MonoBehaviour {
     static public int p_max_message_num = 10;
 
     //Information Controller
-    static public float ic_rotate_velocity = 3f;
+    static public float ic_rotate_velocity = 30f;
     static public float ic_rotate_radius = 2f;
     static public float ic_trans_velocity = 0.1f;
     // Infornation Distributor
@@ -27,7 +27,7 @@ public class ValueTablet : MonoBehaviour {
     //Message Circle 
     static public float mc_rotate_velocity = 20;
     static public int mc_active_ball_num = 2;
-    static public float mc_rotate_radius = 1f;
+    static public float mc_rotate_radius = 2f;
     static public Color mc_hiden_color = new Color(0, 0, 0, 0);
     
     //Collector

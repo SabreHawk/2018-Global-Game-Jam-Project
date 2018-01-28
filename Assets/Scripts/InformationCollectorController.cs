@@ -12,9 +12,12 @@ public class InformationCollectorController : MonoBehaviour {
     public Color hidenColor;
     public Color targetColor;
     public float trans_velocity;
+    void Awake() {
+        isActive = false;
+    }
 	// Use this for initialization
 	void Start () {
-        isActive = false;
+
         rotate_velocity = ValueTablet.ic_rotate_velocity;
         trans_velocity = ValueTablet.ic_trans_velocity;
         _sprite = this.GetComponentInChildren<SpriteRenderer>();

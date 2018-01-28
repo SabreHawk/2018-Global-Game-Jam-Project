@@ -2,28 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MessageCircle : MonoBehaviour {
+public class MessageCircleMain : MonoBehaviour {
     public GameObject message_ball;
     public List<GameObject> message_ball_list;
 
     public float rotate_velocity;
     public float rotate_radius;
-    public float active_ball_num;
+    public int active_ball_num;
     public Color hiden_color;
-    public Color disp_color;
-	// Use this for initialization
-	void Start () {
+    public Color postive_color;
+    public Color negative_color;
+    public int postive_ball_num;
+    public int negative_ball_num;
+    // Use this for initialization
+    void Start () {
         rotate_velocity = ValueTablet.mc_rotate_velocity;
-        rotate_radius = ValueTablet.mc_rotate_radius;
+       // rotate_radius = ValueTablet.mc_rotate_radius;
         active_ball_num = ValueTablet.mc_active_ball_num;
         hiden_color = ValueTablet.mc_hiden_color;
-        disp_color = message_ball.GetComponent<SpriteRenderer>().color;
+        postive_color = message_ball.GetComponent<SpriteRenderer>().color;
     }
 	
 	// Update is called once per frame
 	void Update () {
         rotate_center();
         update_message_circle_color();
+        this.active_ball_num = this.GetComponentInParent<MainPlanetController>().message_num;
+        this.postive_ball_num = this.GetComponentInParent<MainPlanetController>().postive_message_num;
+        this.negative_ball_num = this.GetComponentInParent<MainPlanetController>().negative_message_num;
 
     }
 
@@ -44,11 +50,17 @@ public class MessageCircle : MonoBehaviour {
         this.transform.Rotate(Random.Range(1,1.5f)*rotate_velocity * Time.deltaTime * new Vector3(0,0,1));
     }
     public void update_message_circle_color() {
-        if(active_ball_num > message_ball_list.Count) {
+        if (active_ball_num > message_ball_list.Count) {
             return;
         }
-        for(int i = 0;i < active_ball_num;++i) {
-            message_ball_list[i].GetComponent<SpriteRenderer>().color = disp_color;
+        for (int i = 0; i < postive_ball_num; ++i) {
+            message_ball_list[i].GetComponent<SpriteRenderer>().color = postive_color;
+        }
+        for (int i = postive_ball_num; i < postive_ball_num + negative_ball_num; ++i) {
+            message_ball_list[i].GetComponent<SpriteRenderer>().color = negative_color;
+        }
+        for (int i = active_ball_num; i < message_ball_list.Count; ++i) {
+            message_ball_list[i].GetComponent<SpriteRenderer>().color = hiden_color;
         }
     }
 }

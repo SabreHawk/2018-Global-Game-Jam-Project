@@ -285,6 +285,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\CollectorButtonController.cs" />
     <Compile Include="Assets\Scripts\CollectorController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -294,10 +295,14 @@
     <Compile Include="Assets\Scripts\MainPlanetController.cs" />
     <Compile Include="Assets\Scripts\MessageCircle.cs" />
     <Compile Include="Assets\Scripts\MessageCircleMain.cs" />
+    <Compile Include="Assets\Scripts\MessageCubeController.cs" />
     <Compile Include="Assets\Scripts\OuterRimController.cs" />
     <Compile Include="Assets\Scripts\PlanetController.cs" />
     <Compile Include="Assets\Scripts\PlanetPositionTabletController.cs" />
+    <Compile Include="Assets\Scripts\ScanerController.cs" />
     <Compile Include="Assets\Scripts\StaffButtonController.cs" />
+    <Compile Include="Assets\Scripts\StarController.cs" />
+    <Compile Include="Assets\Scripts\StarMapController.cs" />
     <Compile Include="Assets\Scripts\TransmissionLineController.cs" />
     <Compile Include="Assets\Scripts\ValueTablet.cs" />
   </ItemGroup>
